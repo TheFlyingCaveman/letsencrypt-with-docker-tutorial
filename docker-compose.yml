@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   proxy:
@@ -7,7 +7,7 @@ services:
       - letsencrypt_certs:/etc/nginx/certs
       - letsencrypt_www:/var/www/letsencrypt
     links:
-      - app:letsencrypt.devsidestory.com
+      - app:supersimplesite.win
     ports:
       - "80:80"
       - "443:443"
@@ -21,7 +21,7 @@ services:
       - letsencrypt_www:/var/www/letsencrypt
 
   app:
-    image: dockercloud/hello-world
+    image: trfc/simpleweb
     restart: always
 
 volumes:
